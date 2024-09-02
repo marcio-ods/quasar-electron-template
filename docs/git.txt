@@ -1,0 +1,13 @@
+git status
+git remote add origin git@github.com:marcio-ods/quasar-electron-template.git
+git remote set-url origin https://<username>:<password>@github.com/<username>/FirstRepository.git
+git remote set-url origin git@github.com:marcio-ods/quasar-electron-template.git
+
+git add .
+git push -u origin master
+git commit -m "First commit"
+ git init -b main
+
+ git show-ref
+ git init --bare
+ git init --bare

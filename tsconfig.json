@@ -1,0 +1,31 @@
+{
+  "extends": "@quasar/app-vite/tsconfig-preset",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["src-electron/*"],
+      "ipc/*": ["src-electron/ipc/*"],
+      "config/*": ["src-electron/config/*"],
+      "helpers/*": ["src-electron/helpers/*"],
+      "app/*": ["*"],
+      "src/*": ["src/*"],
+      "@/*": ["src/*"],
+      "ui/*": ["src/ui/*"],
+      "components/*": ["src/components/*"],
+      "layouts/*": ["src/layouts/*"],
+      "pages/*": ["src/pages/*"],
+      "assets/*": ["src/assets/*"],
+      "boot/*": ["src/boot/*"],
+      "stores/*": ["src/stores/*"]
+    }
+  },
+  "exclude": [
+    "./docs",
+    "./dist",
+    "./.quasar",
+    "./node_modules",
+    "./src-capacitor",
+    "./src-cordova",
+    "./quasar.config.*.temporary.compiled*"
+  ]
+}
