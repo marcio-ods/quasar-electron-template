@@ -5,6 +5,7 @@
     "paths": {
       "#/*": ["src-electron/*"],
       "ipc/*": ["src-electron/ipc/*"],
+      "database/*": ["src-electron/database/*"],
       "config/*": ["src-electron/config/*"],
       "helpers/*": ["src-electron/helpers/*"],
       "app/*": ["*"],
