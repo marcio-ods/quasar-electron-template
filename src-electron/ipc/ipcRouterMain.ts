@@ -1,3 +1,4 @@
+import { UserAdapter } from '#/app/adapters/UserAdapter';
 import { ipcMain } from 'electron';
 
 import { BrowserWindowAdapter } from '../app/adapters/BrowserWindowAdapter';
@@ -57,6 +58,10 @@ ipcMain.handle(
         return new BrowserWindowAdapter(ok).reload()
       case 'getPrinters':
         return new PrinterAdapter(ok).getPrinters()
+      case 'userInsert':
+        return new UserAdapter(ok).insert()
+      case 'userGetAll':
+        return new UserAdapter(ok).getAll()
       default:
         return defaultErro(ipcData.target)
     }

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <BtnUserGetAll />
+    <BtnUserInsert />
     <p>{{ title }}</p>
     <ul>
       <li v-for="todo in todos" :key="todo.id" @click="increment">
@@ -14,17 +16,20 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { Todo, Meta } from './models';
+
+import { Meta, Todo } from './models';
+import BtnUserGetAll from './user/btn/BtnUserGetAll.vue';
+import BtnUserInsert from './user/btn/BtnUserInsert.vue';
 
 interface Props {
   title: string;
   todos?: Todo[];
   meta: Meta;
   active: boolean;
-};
+}
 
 const props = withDefaults(defineProps<Props>(), {
-  todos: () => []
+  todos: () => [],
 });
 
 const clickCount = ref(0);

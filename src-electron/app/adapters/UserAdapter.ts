@@ -19,6 +19,15 @@ export class UserAdapter extends IpcAdapter {
 
   }
 
+  insert(): IPC_MESSAGE {
+    const u = new UserBO()
+    u.getAll()
+    console.log('this.msg.content');
+
+    return this.setContent('ok').msg
+
+  }
+
   printToPdf(): IPC_MESSAGE {
 
     console.log(this.msg.content);
