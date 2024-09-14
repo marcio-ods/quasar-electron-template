@@ -1,15 +1,9 @@
 <template>
-  <q-btn
-    @click="reload"
-    round
-    dense
-    flat
-    title="Reload"
-    icon="img:icons/reopen_window.png"
-  />
+  <q-btn @click="reload" round dense flat title="Reload" :icon="'img:' + reopen_window_svg" />
 </template>
 
 <script setup lang="ts">
+import reopen_window_svg from '#/assets/svg/reopen_window.svg';
 import {
   ipcRequest,
   ipcStateRequestClean,

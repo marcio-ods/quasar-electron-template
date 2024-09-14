@@ -2,28 +2,24 @@
   <!-- <q-btn @click="gerarTXT" round dense flat :icon="'img:icons/keep_off.svg'" /> -->
 
   <q-spinner-hourglass v-if="spinner" color="light-green" />
-  <q-btn
-    v-else
-    @click="setKeep"
-    round
-    dense
-    flat
-    useReload
-    :icon="alwaysOnTop === 'yes' ? iconOn : iconOff"
-  />
+  <q-btn v-else @click="setKeep" round dense flat useReload :icon="alwaysOnTop === 'yes' ?
+    `img:${keep}` :
+    `img:${keep_off}`" />
 </template>
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import {
+  onMounted,
+  ref,
+} from 'vue';
 
 import { YesOrNo } from '#/app/appTypes';
+import keep from '#/assets/svg/keep.svg';
+import keep_off from '#/assets/svg/keep_off.svg';
 import { ipcRequest } from '#/ipc/ipcRequest';
 import { IPC_MESSAGE } from '#/ipc/ipcTypes';
 import { useNotify } from 'ui/notify/useNotify';
 
 const notify = useNotify();
-
-const iconOn = 'img:icons/keep.svg';
-const iconOff = 'img:icons/keep_off.svg';
 
 const alwaysOnTop = ref<YesOrNo>('no');
 const spinner = ref(true);

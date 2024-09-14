@@ -1,8 +1,9 @@
 <template>
   <!-- <q-btn dense flat icon="close" /> -->
-  <q-btn dense flat icon="close" @click="fnClose" />
+  <q-btn dense flat :icon="'img:' + close_svg" @click="fnClose" />
 </template>
 <script setup lang="ts">
+import close_svg from '#/assets/svg/close.svg';
 import {
   ipcRequest,
   ipcStateRequestClean,

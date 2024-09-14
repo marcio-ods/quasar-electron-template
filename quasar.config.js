@@ -65,6 +65,7 @@ module.exports = configure(function (/* ctx */) {
       extendViteConf(viteConf) {
         Object.assign(viteConf.resolve.alias, {
           ui: join(__dirname, 'src', 'ui'),
+          app: join(__dirname),
           '#': join(__dirname, 'src-electron'),
           ipc: join(__dirname, 'src-electron', 'ipc'),
           helpers: join(__dirname, 'src-electron', 'helpers'),

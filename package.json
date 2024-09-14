@@ -6,6 +6,8 @@
   "author": "Marcio Oliveira da Silva <marcio_ods@hotmail.com>",
   "private": true,
   "scripts": {
+    "electron": "npx quasar dev -m electron",
+    "electron:build": "npx quasar build -m electron",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
@@ -15,13 +17,18 @@
   "dependencies": {
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
+    "better-sqlite3": "^11.3.0",
+    "fs-extra": "^11.2.0",
     "pinia": "^2.0.11",
     "quasar": "^2.16.0",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@electron/packager": "^18.3.5",
     "@quasar/app-vite": "^1.9.0",
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^12.20.21",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
